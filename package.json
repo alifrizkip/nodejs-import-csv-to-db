@@ -1,0 +1,17 @@
+{
+  "name": "import-csv-to-db-with-nodejs",
+  "version": "1.0.0",
+  "description": "Example code to import data from csv to database with nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alfrizp",
+  "license": "ISC",
+  "dependencies": {
+    "csvjson": "^5.0.0",
+    "dotenv": "^5.0.0",
+    "knex": "^0.14.2",
+    "mysql": "^2.15.0"
+  }
+}
