@@ -11,3 +11,7 @@ knex.insert(dataObj)
         console.log('Import data done!')
         process.exit(0)
     })
+    .catch(() => {
+        console.log('Import data failed')
+        process.exit(0)
+    })
