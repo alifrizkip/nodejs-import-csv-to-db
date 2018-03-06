@@ -1,7 +1,7 @@
 const csv = require('csv')
 const fs = require('fs')
 
-exports.import = (file, processRow, options) => {
+exports.import = (file, processRow, options = {}) => {
   const activePromises = []
   options.expectHeader = options.expectHeader || true
   return new Promise((resolve, reject) => {
