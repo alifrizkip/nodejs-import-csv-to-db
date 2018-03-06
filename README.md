@@ -1,6 +1,14 @@
 # Import CSV to DB with NodeJS
-Simple example code to import CSV data to mysql database with NodeJS
+Library to import CSV data to SQL (knex supported) database with NodeJS.
 
 ## How to run
-- `npm install`
-- `node index.js`
+
+install dependencies as usual:
+  ```
+  npm install
+  ```
+
+example start:
+  ```
+  DOTENV_FILE=example/.env.example node import.js
+  ```
