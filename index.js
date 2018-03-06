@@ -1,24 +1,18 @@
 const csv = require('csv')
 const fs = require('fs')
 
-exports.import = (file, options, knex, CustomPromise) => {
+exports.import = (file, processRow, options) => {
   const activePromises = []
   options.expectHeader = options.expectHeader || true
   return new Promise((resolve, reject) => {
     const input = fs.createReadStream(file) // input stream
     const ctx = {}
-    const transformer = csv.transform(record => {
+    const transformer = csv.transform(row => {
       if (options.expectHeader && !ctx.header) {
-        ctx.header = record
+        ctx.header = row
         return
       }
-      const row = {}
-      record.map((i, idx) => {
-        if (i) {
-          row[ctx.header[idx]] = i
-        }
-      })
-      const promise = knex(options.table).insert(row)
+      const promise = processRow(row, ctx)
       activePromises.push(promise)
       promise
       .then(inserted => {
