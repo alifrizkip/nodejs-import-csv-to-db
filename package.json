@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-import-csv-to-db",
+  "name": "import-csv-to-db",
   "version": "1.0.0",
   "description": "library to import data from csv to database with nodeJS",
   "main": "index.js",
